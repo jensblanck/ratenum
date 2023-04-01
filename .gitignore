@@ -1,0 +1,4 @@
+.stack-work/
+rat.cabal
+*~
+dist-newstyle/
