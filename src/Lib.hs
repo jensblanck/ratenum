@@ -1,5 +1,11 @@
 {-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
+{-|
+Module : Lib
+Description : Library with enumerations of rational numbers
 
+Based on
+Gibbons, J., Lester, D., & Bird, R. (2006). Functional pearl: Enumerating the rationals. Journal of Functional Programming, 16(3), 281-291. [doi:10.1017/S0956796806005880](https://doi.org/10.1017/S0956796806005880)
+-}
 module Lib where
 
 import Prelude hiding (gcd)
