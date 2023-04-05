@@ -12,6 +12,17 @@ import Prelude hiding (gcd)
 import Data.Ratio
 import Data.List (group)
 
+-- | List of positive rational numbers created from diagonals. Contains infinitely many duplicates. Merely here for comparison.
+rat1 :: [Rational]
+rat1 = concat (diags [[m % n | m <- [1..]] | n <- [1..]])
+  where diags = diags' []
+        diags' _ [] = error "Impossible"
+        diags' xss (ys : yss) = map head xss : diags' (ys : map tail xss) yss
+
+-- | List of positive rational numbers created from diagonals. Although diaganals now constructed directly. Contains infinitely many duplicates. Merely here for comparison.
+rat2 :: [Rational]
+rat2 = concat [[m % (d-m) | m <- [1..d-1]] | d <- [2..]]
+
 gcd :: Integer -> Integer -> Integer
 gcd m n
   | m < n = gcd m (n-m)
